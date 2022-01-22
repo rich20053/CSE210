@@ -50,23 +50,16 @@ class Player():
 
 
 def main():
-    die1 = Die()
-    die2 = Die()
-    die3 = Die()
-    die4 = Die()
-    die5 = Die()
-    
+
     mydice = []
-    mydice.append(die1)
-    mydice.append(die2)
-    mydice.append(die3)
-    mydice.append(die4)
-    mydice.append(die5)
+
+    for i in range(5):
+        die = Die()
+        mydice.append(die)
 
     myself = Player()
 
     roll_again = input("Roll dice? [y/n] ")
-
 
     while (roll_again == "y"):
         myself.roll_dice(mydice)
@@ -76,8 +69,6 @@ def main():
         if (not myself.any_scoring_dice(mydice)):
             break
         roll_again = input("Roll dice? [y/n] ")
-
-
 
 if __name__ == "__main__":
     main()
